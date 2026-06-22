@@ -1,28 +1,25 @@
 {
   "schemaVersion": 1,
-  "id": "altoclef",
-  "version": "${version}",
-  "name": "Alto Clef",
+  "id": "rinforzando",
+  "version": "1.21-beta1",
+  "name": "Rinforzando",
   "description": "Plays Block Game",
   "authors": [
-    "TacoTechnica",
-    "James Green",
-    "Marvion Kirito",
-    "MiranCZ"
+    "Marvion Kirito"
   ],
   "contact": {
-    "homepage": "https://github.com/MiranCZ/altoclef",
-    "sources": "https://github.com/MiranCZ/altoclef"
+    "homepage": "https://fabricc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
-  "license": "MIT",
-  "icon": "assets/altoclef/icon.png",
+  "license": "CC0-1.0",
+  "icon": "assets/rinforzando/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "adris.altoclef.AltoClef"
+      "adris.rinforzando.Rinforzando"
     ]
   },
   "mixins": [
-    "altoclef.mixins.json"
+    "rinforzando.mixins.json"
   ]
 }
