@@ -5,11 +5,10 @@
 *A PvP-focused AltoClef fork for newer versions.*
 
 > **⚠️ Work in Progress**
+> 
 > Rinforzando is currently in a very early stage of active development. Because it is a **work in very progress**, there are **no official builds or wiki pages available yet**. Stay tuned for updates!
 
 **Rinforzando** is a utility-focused modification designed to optimize bot pathfinding and combat mechanics for modern Minecraft versions. This project is built directly on top of [MarvionKirito's AltoClef](https://github.com/MarvionKirito/altoclef), inheriting its stability improvements.
-
----
 
 ## Features
 
@@ -24,8 +23,6 @@ Replaces voxel-based navigation with a hierarchical 3D octree structure, enablin
 
 ### Lazy Theta\* & HPA\* Pathfinding
 Uses lazy evaluation. Instead of constantly checking if a straight line is blocked at every single step, it handles massive maps efficiently by breaking them down into smaller chunks.
-
----
 
 <p align="center" style="font-size: 0.8em; color: gray;">
   Not affiliated with Mojang Synergies AB.<br>
