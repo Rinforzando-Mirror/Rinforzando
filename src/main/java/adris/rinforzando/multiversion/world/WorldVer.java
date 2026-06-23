@@ -1,9 +1,10 @@
 package adris.rinforzando.multiversion.world;
 
 import adris.rinforzando.multiversion.Pattern;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;

@@ -9,7 +9,6 @@ import adris.rinforzando.commandsystem.args.ListArg;
 import adris.rinforzando.commandsystem.exception.BadCommandSyntaxException;
 import adris.rinforzando.commandsystem.exception.CommandException;
 import adris.rinforzando.commandsystem.exception.CommandNotFinishedException;
-import adris.rinforzando.commandsystem.exception.RuntimeCommandException;
 import adris.rinforzando.util.Pair;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.screen.ChatInputSuggestor;
@@ -43,6 +42,7 @@ import java.util.Optional;
 public abstract class ChatInputSuggestorMixin {
 
     @Unique
+    private static final Style PREFIX_STYLE = Style.EMPTY.withColor(Formatting.GOLD);
     private static final Style SEMICOLOMN_STYLE = Style.EMPTY.withColor(Formatting.LIGHT_PURPLE);
     @Shadow
     @Final
@@ -155,9 +155,9 @@ public abstract class ChatInputSuggestorMixin {
                 }
 
                 if (errorSeverity > 0) {
-                    splitColor = this.ERROR_STYLE;
+                    splitColor = ChatInputSuggestorMixin.ERROR_STYLE;
 
-                    styledText.add(new Pair<>(command, this.ERROR_STYLE));
+                    styledText.add(new Pair<>(command, ChatInputSuggestorMixin.ERROR_STYLE));
                     if (i + 1 < split.length) {
                         styledText.add(new Pair<>(";", splitColor));
                     }
@@ -172,7 +172,7 @@ public abstract class ChatInputSuggestorMixin {
 
                 errorSeverity = part.getRight().getLeft();
                 if (errorSeverity > 0) {
-                    splitColor = this.ERROR_STYLE;
+                    splitColor = ChatInputSuggestorMixin.ERROR_STYLE;
                     errorMsg = part.getRight().getRight();
                 }
 
@@ -232,12 +232,14 @@ public abstract class ChatInputSuggestorMixin {
         MutableText errorMsg = null;
 
         if (s.isBlank() || reader.peek().isEmpty())
-            return new Pair<>(List.of(new Pair<>(s, this.INFO_STYLE)), new Pair<>(0, null));
+            return new Pair<>(List.of(new Pair<>(s, ChatInputSuggestorMixin.INFO_STYLE)), new Pair<>(0, null));
 
         String cmd = reader.next();
         boolean hasPrefix = false;
+        String prefix = "";
         if (cmd.startsWith(executor.getCommandPrefix())) {
             hasPrefix = true;
+            prefix = executor.getCommandPrefix();
             cmd = cmd.substring(executor.getCommandPrefix().length());
         }
 
@@ -248,10 +250,10 @@ public abstract class ChatInputSuggestorMixin {
 
             ArrayList<Pair<String, Style>> res = new ArrayList<>();
             if (hasPrefix) {
-                res.add(new Pair<>(executor.getCommandPrefix(), this.INFO_STYLE));
-                res.add(new Pair<>(s.substring(executor.getCommandPrefix().length()), this.ERROR_STYLE));
+                res.add(new Pair<>(prefix, PREFIX_STYLE));
+                res.add(new Pair<>(s.substring(prefix.length()), ChatInputSuggestorMixin.ERROR_STYLE));
             } else {
-                res.add(new Pair<>(s, this.ERROR_STYLE));
+                res.add(new Pair<>(s, ChatInputSuggestorMixin.ERROR_STYLE));
             }
 
             return new Pair<>(res, new Pair<>(2, error));
@@ -260,7 +262,12 @@ public abstract class ChatInputSuggestorMixin {
 
         List<Pair<String, Style>> styledText = new ArrayList<>();
 
-        s = addStyledText(styledText, original, s, this.INFO_STYLE, reader);
+        if (hasPrefix) {
+            styledText.add(new Pair<>(prefix, PREFIX_STYLE));
+            s = s.substring(prefix.length());
+        }
+
+        s = addStyledText(styledText, original, s, ChatInputSuggestorMixin.INFO_STYLE, reader);
 
         Arg<?>[] args = command.getArgs();
         int styleIndex = 0;
@@ -278,11 +285,11 @@ public abstract class ChatInputSuggestorMixin {
             Arg.ParseResult result = arg.consumeIfSupplied(reader);
 
             if (result == Arg.ParseResult.CONSUMED) {
-                s = addStyledText(styledText, original, s, this.HIGHLIGHT_STYLES.get(styleIndex), reader);
+                s = addStyledText(styledText, original, s, ChatInputSuggestorMixin.HIGHLIGHT_STYLES.get(styleIndex), reader);
 
                 styleIndex++;
 
-                if (styleIndex >= this.HIGHLIGHT_STYLES.size()) {
+                if (styleIndex >= ChatInputSuggestorMixin.HIGHLIGHT_STYLES.size()) {
                     styleIndex = 0;
                 }
 
@@ -300,7 +307,7 @@ public abstract class ChatInputSuggestorMixin {
                         && original.length() == maxLen
                 ) {
                     String str = command.getHelpRepresentation(cmd, i);
-                    errorMsg = Text.literal(str).setStyle(this.INFO_STYLE);
+                    errorMsg = Text.literal(str).setStyle(ChatInputSuggestorMixin.INFO_STYLE);
 
                     errorSeverity = 1;
                 }
@@ -310,13 +317,13 @@ public abstract class ChatInputSuggestorMixin {
                 errorSeverity = 2;
             }
 
-            styledText.add(new Pair<>(s, this.ERROR_STYLE));
+            styledText.add(new Pair<>(s, ChatInputSuggestorMixin.ERROR_STYLE));
             s = "";
             break;
         }
 
         if (!s.isEmpty() || original.endsWith(" ")) {
-            styledText.add(new Pair<>(s, this.ERROR_STYLE));
+            styledText.add(new Pair<>(s, ChatInputSuggestorMixin.ERROR_STYLE));
 
             if (errorMsg == null) {
                 errorMsg = buildErrorMessage("Unexpected argument", original, reader.getIndex());

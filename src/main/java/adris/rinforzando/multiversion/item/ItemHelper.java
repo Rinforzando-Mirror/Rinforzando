@@ -1,15 +1,6 @@
 package adris.rinforzando.multiversion.item;
 
-import adris.rinforzando.mixins.AxeItemAccessor;
-import adris.rinforzando.mixins.MiningToolItemAccessor;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.MiningToolItem;
-import net.minecraft.item.PickaxeItem;
-
-import java.util.Set;
 
 public class ItemHelper {
 

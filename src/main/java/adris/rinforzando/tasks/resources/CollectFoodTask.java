@@ -462,18 +462,6 @@ public class CollectFoodTask extends Task {
     }
 
     @SuppressWarnings("rawtypes")
-    private static class CookableFoodTargetFish extends CookableFoodTarget {
-
-        public CookableFoodTargetFish(String rawFood, Class mobToKill) {
-            super(rawFood, mobToKill);
-        }
-
-        @Override
-        public boolean isFish() {
-            return true;
-        }
-    }
-
     public static class CropTarget {
         public Item cropItem;
         public Block cropBlock;

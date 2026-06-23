@@ -1,6 +1,4 @@
 package adris.rinforzando;
-
-
 import adris.rinforzando.butler.Butler;
 import adris.rinforzando.chains.*;
 import adris.rinforzando.trackers.BlockScanner;
@@ -27,7 +25,6 @@ import adris.rinforzando.ui.CommandStatusOverlay;
 import adris.rinforzando.ui.MessagePriority;
 import adris.rinforzando.ui.MessageSender;
 import adris.rinforzando.util.helpers.InputHelper;
-import adris.rinforzando.util.helpers.StorageHelper;
 import baritone.Baritone;
 import baritone.altoclef.AltoClefSettings;
 import baritone.api.BaritoneAPI;

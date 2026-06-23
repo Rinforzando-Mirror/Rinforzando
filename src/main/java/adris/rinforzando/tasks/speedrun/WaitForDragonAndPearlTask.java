@@ -37,11 +37,11 @@ import java.util.function.Predicate;
 // risking hitting an obsidian tower)
 public class WaitForDragonAndPearlTask extends Task {
 
-    // How far to travel away from the portal, in XZ
-    private static final double XZ_RADIUS = 30;
-    private static final double XZ_RADIUS_TOO_FAR = 38;
     // How high to pillar
     private static final int HEIGHT = 42; //Increase height because this too low
+
+    private static final double XZ_RADIUS = 30;
+    private static final double XZ_RADIUS_TOO_FAR = 38;
 
     private static final int CLOSE_ENOUGH_DISTANCE = 15;
 

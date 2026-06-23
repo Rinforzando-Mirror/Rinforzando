@@ -49,9 +49,7 @@ import java.util.List;
  */
 public class KillEnderDragonTask extends Task {
 
-    private static final String[] DIAMOND_ARMORS = new String[]{"diamond_chestplate", "diamond_leggings", "diamond_helmet", "diamond_boots"};
-    // Don't accidentally anger endermen lol
-    private final TimerGame lookDownTimer = new TimerGame(0.5);
+    private static final TimerGame lookDownTimer = new TimerGame(0.5);
     private final Task collectBuildMaterialsTask = new CollectBlockByOneTask.CollectEndStoneTask(100);
     private final PunkEnderDragonTask punkTask = new PunkEnderDragonTask();
     private BlockPos exitPortalTop;
@@ -203,7 +201,6 @@ public class KillEnderDragonTask extends Task {
 
     private class PunkEnderDragonTask extends Task {
 
-        private final HashMap<BlockPos, Double> _breathCostMap = new HashMap<>();
         private final TimerGame _hitHoldTimer = new TimerGame(0.1);
         private final TimerGame _hitResetTimer = new TimerGame(0.4);
         private final TimerGame _randomWanderChangeTimeout = new TimerGame(20);

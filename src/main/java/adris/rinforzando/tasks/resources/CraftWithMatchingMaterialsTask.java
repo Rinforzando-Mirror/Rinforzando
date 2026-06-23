@@ -19,7 +19,6 @@ public abstract class CraftWithMatchingMaterialsTask extends ResourceTask {
     private final boolean[] sameMask;
 
     private final ItemTarget sameResourceTarget;
-    private final int sameResourceRequiredCount;
     private final int sameResourcePerRecipe;
 
     public CraftWithMatchingMaterialsTask(ItemTarget target, CraftingRecipe recipe, boolean[] sameMask) {
@@ -43,7 +42,6 @@ public abstract class CraftWithMatchingMaterialsTask extends ResourceTask {
         // cant this be just replaced with `Math.ceil((double) target.getTargetCount() / recipe.outputCount())` ?
         int craftsNeeded = (int) (1 + Math.floor((double) target.getTargetCount() / recipe.outputCount() - 0.001));
         sameResourcePerRecipe = sameResourceRequiredCount;
-        this.sameResourceRequiredCount = sameResourceRequiredCount * craftsNeeded;
     }
 
     private static CraftingRecipe generateSameRecipe(CraftingRecipe diverseRecipe, Item sameItem, boolean[] sameMask) {

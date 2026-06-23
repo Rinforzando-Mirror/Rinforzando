@@ -26,8 +26,6 @@ public class TradeWithPiglinsTask extends ResourceTask {
     // TODO: Settings? Custom parameter?
     private static final boolean AVOID_HOGLINS = true;
     private static final double HOGLIN_AVOID_TRADE_RADIUS = 64;
-    // If we're too far away from a trading piglin, we risk deloading them and losing the trade.
-    private static final double TRADING_PIGLIN_TOO_FAR_AWAY = 64 + 8;
     private final int goldBuffer;
     private final Task tradeTask = new PerformTradeWithPiglin();
     private Task goldTask = null;

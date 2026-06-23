@@ -138,7 +138,6 @@ public class BeatMinecraftTask extends Task {
     private int cachedFilledPortalFrames = 0;
     // Controls whether we CAN walk on the end portal.
     private boolean enterindEndPortal = false;
-    private Task lootTask;
     private boolean collectingEyes;
     private boolean escapingDragonsBreath = false;
     private Task getBedTask;

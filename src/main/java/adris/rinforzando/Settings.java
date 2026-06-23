@@ -85,7 +85,7 @@ public class Settings implements IFailableConfigFile {
     /**
      * When logging to chat, will prepend this to each log.
      */
-    private String chatLogPrefix = "\u00A7xf\u00A7x5\u00A7x9\u00A7xe\u00A7x0\u00A7xb[Rinforzando] ";
+    private String chatLogPrefix = "\u00A76[Rinforzando] ";
 
     /**
      * If true, will show a timer.

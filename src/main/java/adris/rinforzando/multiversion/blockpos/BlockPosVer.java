@@ -2,7 +2,6 @@ package adris.rinforzando.multiversion.blockpos;
 
 import adris.rinforzando.multiversion.Pattern;
 import net.minecraft.util.math.*;
-import adris.rinforzando.multiversion.blockpos.BlockPosHelper;
 
 public class BlockPosVer {
 

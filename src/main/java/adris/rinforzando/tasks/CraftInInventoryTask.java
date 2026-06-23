@@ -25,7 +25,6 @@ public class CraftInInventoryTask extends ResourceTask {
     private final RecipeTarget _target;
     private final boolean _collect;
     private final boolean _ignoreUncataloguedSlots;
-    private boolean _fullCheckFailed = false;
 
     public CraftInInventoryTask(RecipeTarget target, boolean collect, boolean ignoreUncataloguedSlots) {
         super(new ItemTarget(target.getOutputItem(), target.getTargetCount()));
@@ -45,7 +44,6 @@ public class CraftInInventoryTask extends ResourceTask {
 
     @Override
     protected void onResourceStart(Rinforzando mod) {
-        _fullCheckFailed = false;
         ItemStack cursorStack = StorageHelper.getItemStackInCursorSlot();
         if (!cursorStack.isEmpty() && !StorageHelper.isBigCraftingOpen()) {
             Optional<Slot> moveTo = mod.getItemStorage().getSlotThatCanFitInPlayerInventory(cursorStack, false);
@@ -79,7 +77,6 @@ public class CraftInInventoryTask extends ResourceTask {
         }
 
         ItemTarget toGet = itemTargets[0];
-        Item toGetItem = toGet.getMatches()[0];
         if (_collect && !StorageHelper.hasRecipeMaterialsOrTarget(mod, _target)) {
             // Collect recipe materials
             setDebugState("Collecting materials");

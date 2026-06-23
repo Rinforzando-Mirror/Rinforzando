@@ -11,7 +11,6 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.*;
-import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -89,7 +88,6 @@ public class EntityHelper {
                 k = (player.getStatusEffect(StatusEffects.RESISTANCE).getAmplifier() + 1) * 5;
                 float j = 25 - k;
                 double f = damageAmount * (double) j;
-                double g = damageAmount;
                 damageAmount = Math.max(f / 25.0F, 0.0F);
             }
 

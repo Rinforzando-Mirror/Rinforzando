@@ -25,9 +25,6 @@ import java.util.function.Predicate;
 
 public class CollectObsidianTask extends ResourceTask {
 
-    private final TimerGame _placeWaterTimeout = new TimerGame(6);
-    private final MovementProgressChecker _lavaTimeout = new MovementProgressChecker();
-    private final Set<BlockPos> _lavaBlacklist = new HashSet<>();
     private final int _count;
     private Task _forceCompleteTask = null;
     private BlockPos _lavaWaitCurrentPos;

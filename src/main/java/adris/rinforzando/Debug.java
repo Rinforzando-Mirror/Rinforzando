@@ -25,7 +25,7 @@ public class Debug {
         if (altoClef != null) {
             return altoClef.getModSettings().getChatLogPrefix();
         }
-        return "\u00A7xf\u00A7x5\u00A7x9\u00A7xe\u00A7x0\u00A7xb[Rinforzando] ";
+        return "\u00A76[Rinforzando] ";
     }
 
     public static void logMessage(String message, boolean prefix) {

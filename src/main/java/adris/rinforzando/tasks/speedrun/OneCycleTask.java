@@ -61,20 +61,8 @@ public class OneCycleTask extends Task {
                 return null;
             }
 
-            Direction offsetDir = dir.getAxis() == Direction.Axis.X ? Direction.SOUTH : Direction.WEST;
-            BlockPos targetBlock = endPortalTop.down(3).offset(offsetDir, 3).offset(dir);
-
-            double d = distanceIgnoreY(WorldHelper.toVec3d(targetBlock), mod.getPlayer().getPos());
-            if (d > 0.7) {
-                mod.log(d + "");
-                return new GetToBlockTask(targetBlock);
-            }
-            LookHelper.lookAt(mod,obsidian,dir);
-
-
             BlockPos bedHead = WorldHelper.getBedHead(endPortalTop);
 
-            BlockPos bedTargetPosition = endPortalTop.up();
             mod.getSlotHandler().forceEquipItem(ItemHelper.BED);
 
             if (bedHead == null) {
@@ -112,7 +100,6 @@ public class OneCycleTask extends Task {
             boolean skip = destroyDistance > 3 && dist > 4.5 && distXZ > 2.5;
 
             mod.log(destroyDistance + " : " + dist + " : " + distXZ);
-            //   double dist = distanceIgnoreY(dragonHeadPos,WorldHelper.toVec3d(bedHead));
 
             if ((dist < 1.5 || (prevDist < distXZ && destroyDistance < 4 && prevDist < 2.9)) || (destroyDistance < 2 && dist < 4)
                     || (destroyDistance < 1.7 && dist < 4.5) || tooClose || (destroyDistance < 2.4 && distXZ < 3.7) || (destroyDistance < 3.5 && distXZ < 2.4)) {
@@ -124,19 +111,6 @@ public class OneCycleTask extends Task {
             }
 
             prevDist = distXZ;
-
-            double yDist = dragonHeadPos.getY() - bedHead.getY();
-            // Debug.logMessage(dist+"");
-
-           /* if ((dist < 0.9 && yDist < 3) || yDist<2) {
-                mod.getInputControls().tryPress(Input.CLICK_RIGHT);
-
-            }*/
-           /* if (prevDist < dist && yDist < 4) {
-                mod.getInputControls().tryPress(Input.CLICK_RIGHT);
-            }
-
-            prevDist = dist;*/
 
         }
 

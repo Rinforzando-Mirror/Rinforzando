@@ -1,10 +1,8 @@
 package adris.rinforzando.tasks.resources;
 
 import adris.rinforzando.Rinforzando;
-import adris.rinforzando.TaskCatalogue;
 import adris.rinforzando.tasks.ResourceTask;
 import adris.rinforzando.tasks.container.CraftInTableTask;
-import adris.rinforzando.tasks.container.SmeltInBlastFurnaceTask;
 import adris.rinforzando.tasks.container.SmeltInFurnaceTask;
 import adris.rinforzando.tasks.movement.DefaultGoToDimensionTask;
 import adris.rinforzando.tasksystem.Task;
@@ -13,9 +11,6 @@ import adris.rinforzando.util.helpers.WorldHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
-import net.minecraft.util.math.BlockPos;
-
-import java.util.Optional;
 
 public class CollectGoldIngotTask extends ResourceTask {
 

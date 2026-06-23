@@ -21,12 +21,9 @@ import adris.rinforzando.tasks.resources.CollectFoodTask;
 import adris.rinforzando.tasks.resources.TradeWithPiglinsTask;
 import adris.rinforzando.tasks.speedrun.KillEnderDragonTask;
 import adris.rinforzando.tasks.speedrun.KillEnderDragonWithBedsTask;
-import adris.rinforzando.tasks.speedrun.WaitForDragonAndPearlTask;
 import adris.rinforzando.util.*;
 import adris.rinforzando.util.helpers.WorldHelper;
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.GhastEntity;
 import net.minecraft.entity.mob.ZombieEntity;
@@ -35,13 +32,10 @@ import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.chunk.EmptyChunk;
 
 import java.io.*;
 import java.util.List;
-import java.util.Optional;
-import java.util.Scanner;
 
 /**
  * For testing.

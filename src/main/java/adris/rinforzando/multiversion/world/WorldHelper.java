@@ -1,8 +1,5 @@
 package adris.rinforzando.multiversion.world;
 
-import net.minecraft.world.World;
-import net.minecraft.util.math.BlockPos;
-
 public class WorldHelper {
 
     //#if MC <= 11605

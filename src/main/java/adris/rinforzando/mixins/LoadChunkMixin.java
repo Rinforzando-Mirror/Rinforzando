@@ -18,7 +18,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 //$$ import net.minecraft.world.biome.source.BiomeArray;
 //#endif
 
-import java.util.BitSet;
 import java.util.function.Consumer;
 
 @Mixin(ClientChunkManager.class)

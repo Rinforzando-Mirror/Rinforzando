@@ -1,18 +1,13 @@
 package adris.rinforzando.tasks.resources;
 
 import adris.rinforzando.Rinforzando;
-import adris.rinforzando.TaskCatalogue;
 import adris.rinforzando.tasks.ResourceTask;
-import adris.rinforzando.tasks.container.SmeltInBlastFurnaceTask;
 import adris.rinforzando.tasks.container.SmeltInFurnaceTask;
 import adris.rinforzando.tasksystem.Task;
 import adris.rinforzando.util.ItemTarget;
 import adris.rinforzando.util.SmeltTarget;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
-import net.minecraft.util.math.BlockPos;
-
-import java.util.Optional;
 
 public class CollectIronIngotTask extends ResourceTask {
 

@@ -12,14 +12,10 @@ import java.util.List;
 
 public class GoalDodgeProjectiles implements Goal {
 
-    private static final double Y_SCALE = 0.3f;
-
     private final Rinforzando mod;
 
     private final double distanceHorizontal;
     private final double distanceVertical;
-
-    private final List<CachedProjectile> cachedProjectiles = new ArrayList<>();
 
     public GoalDodgeProjectiles(Rinforzando mod, double distanceHorizontal, double distanceVertical) {
         this.mod = mod;

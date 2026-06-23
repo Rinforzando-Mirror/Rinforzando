@@ -6,9 +6,7 @@ import adris.rinforzando.eventbus.EventBus;
 import adris.rinforzando.eventbus.events.ChatMessageEvent;
 import adris.rinforzando.eventbus.events.TaskFinishedEvent;
 import adris.rinforzando.ui.MessagePriority;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.network.message.MessageType;
-import net.minecraft.world.World;
 
 import java.util.Objects;
 

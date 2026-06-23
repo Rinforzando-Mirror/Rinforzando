@@ -25,7 +25,6 @@ import java.util.function.Predicate;
 public class EscapeFromLavaTask extends CustomBaritoneGoalTask {
 
     private final float strength;
-    private int ticks = 0;
     private final Predicate<BlockPos> avoidPlacingRiskyBlock;
 
     public EscapeFromLavaTask(Rinforzando mod,float strength) {
@@ -200,7 +199,7 @@ public class EscapeFromLavaTask extends CustomBaritoneGoalTask {
                 .raycast(
                         new RaycastContext(
                                 cameraPos, vec3d3, RaycastContext.ShapeType.OUTLINE,
-                                false ? RaycastContext.FluidHandling.ANY : RaycastContext.FluidHandling.NONE, mod.getPlayer()
+                                RaycastContext.FluidHandling.NONE, mod.getPlayer()
                         )
                 );
     }

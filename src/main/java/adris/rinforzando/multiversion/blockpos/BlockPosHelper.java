@@ -1,8 +1,5 @@
 package adris.rinforzando.multiversion.blockpos;
 
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3i;
-
 public class BlockPosHelper {
 
     //#if MC <= 11605

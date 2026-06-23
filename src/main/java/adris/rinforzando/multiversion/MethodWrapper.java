@@ -8,11 +8,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.block.spawner.MobSpawnerLogic;
 import net.minecraft.world.World;
 
-//#if MC >= 11701
-import net.minecraft.util.math.random.CheckedRandom;
-import net.minecraft.util.math.random.Random;
-//#endif
-
 public class MethodWrapper {
 
 

@@ -12,13 +12,11 @@ public class PlaceBlockSchematic extends AbstractSchematic {
     private static final int RANGE = 1;
     private final Block[] blockToPlace;
     private final boolean skipIfAlreadyThere;
-    private final boolean done;
     private BlockState targetPlace;
 
     public PlaceBlockSchematic(Block[] blocksToPlace, boolean skipIfAlreadyThere) {
         super(RANGE, RANGE, RANGE);
         blockToPlace = blocksToPlace;
-        done = false;
         targetPlace = null;
         this.skipIfAlreadyThere = skipIfAlreadyThere;
     }

@@ -3,9 +3,6 @@ package adris.rinforzando.multiversion.entity;
 import adris.rinforzando.mixins.PortalManagerAccessor;
 import net.minecraft.block.NetherPortalBlock;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.world.dimension.NetherPortal;
 
 public class EntityHelper {
 

@@ -1,8 +1,5 @@
 package adris.rinforzando.multiversion.box;
 
-import net.minecraft.util.math.Box;
-import net.minecraft.util.math.Vec3d;
-
 public class BoxHelper {
 
     //#if MC <= 11605

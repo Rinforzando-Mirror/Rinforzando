@@ -24,8 +24,6 @@ public class KillEndermanTask extends ResourceTask {
 
     private final int _count;
 
-    private final TimerGame _lookDelay = new TimerGame(0.2);
-
     public KillEndermanTask(int count) {
         super(new ItemTarget(Items.ENDER_PEARL, count));
         _count = count;

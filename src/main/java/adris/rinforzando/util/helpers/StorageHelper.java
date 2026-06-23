@@ -357,7 +357,6 @@ public class StorageHelper {
     }
     public static Optional<Slot> getSlotWithThrowawayBlock(Rinforzando mod, boolean limitToHotbar) {
         final List<Slot> throwawayBlockItems = new ArrayList<>();
-        int totalBlockThrowaways = 0;
         if (!mod.getItemStorage().getSlotsWithItemPlayerInventory(false, mod.getModSettings().getThrowawayItems(mod)).isEmpty()) {
             for (Slot slot : mod.getItemStorage().getSlotsWithItemPlayerInventory(false, mod.getModSettings().getThrowawayItems(mod))) {
                 // Our cursor slot is NOT a garbage slot
@@ -369,7 +368,6 @@ public class StorageHelper {
                 if (!ItemHelper.canThrowAwayStack(mod, stack))
                     continue;
                 if (stack.getItem() instanceof BlockItem) {
-                    totalBlockThrowaways += stack.getCount();
                     throwawayBlockItems.add(slot);
                 }
             }

@@ -254,6 +254,7 @@ public class BlockScanner {
         forceStop = true;
     }
 
+    @SuppressWarnings("unchecked")
     public void tick() {
         if (mod.getWorld() == null || mod.getPlayer() == null) return;
         //be maximally aware of the closest blocks around you

@@ -82,14 +82,12 @@ public class PlaceBedAndSetSpawnTask extends Task {
     private final TimerGame bedInteractTimeout = new TimerGame(5);
     private final TimerGame inBedTimer = new TimerGame(1);
     private final MovementProgressChecker progressChecker = new MovementProgressChecker();
-    private boolean stayInBed;
     private BlockPos currentBedRegion;
     private BlockPos currentStructure, currentBreak;
     private boolean spawnSet;
     private Subscription<ChatMessageEvent> respawnPointSetMessageCheck;
     private Subscription<GameOverlayEvent> respawnFailureMessageCheck;
     private boolean sleepAttemptMade;
-    private boolean wasSleeping;
     private BlockPos bedForSpawnPoint;
 
     public PlaceBedAndSetSpawnTask() {
@@ -101,17 +99,10 @@ public class PlaceBedAndSetSpawnTask extends Task {
      *
      * @return The current instance of PlaceBedAndSetSpawnTask.
      */
-    public PlaceBedAndSetSpawnTask stayInBed() {
-        // Log method call
-        Debug.logInternal("Stay in bed method called");
-
-        // Set _stayInBed flag to true
-        this.stayInBed = true;
-        Debug.logInternal("Setting _stayInBed to true");
-
-        // Return current instance
-        return this;
-    }
+        public PlaceBedAndSetSpawnTask stayInBed() {
+            Debug.logInternal("Stay in bed method called");
+            return this;
+        }
 
     /**
      * This method is called when the mod starts.
@@ -160,7 +151,6 @@ public class PlaceBedAndSetSpawnTask extends Task {
         // Reset variables for sleep handling
         spawnSet = false;
         sleepAttemptMade = false;
-        wasSleeping = false;
 
         // Subscribe to respawn point set message event
         respawnPointSetMessageCheck = EventBus.subscribe(ChatMessageEvent.class, evt -> {
@@ -197,7 +187,6 @@ public class PlaceBedAndSetSpawnTask extends Task {
     public void resetSleep() {
         spawnSet = false;
         sleepAttemptMade = false;
-        wasSleeping = false;
     }
 
     @Override
@@ -230,8 +219,6 @@ public class PlaceBedAndSetSpawnTask extends Task {
         if (screen instanceof SleepingChatScreen) {
             progressChecker.reset();
             setDebugState("Sleeping...");
-            wasSleeping = true;
-            //Debug.logMessage("Closing sleeping thing");
             spawnSet = true;
             return null;
         }
@@ -524,7 +511,6 @@ public class PlaceBedAndSetSpawnTask extends Task {
 
         for (int x = origin.getX() - SCAN_RANGE; x < origin.getX() + SCAN_RANGE; ++x) {
             for (int z = origin.getZ() - SCAN_RANGE; z < origin.getZ() + SCAN_RANGE; ++z) {
-                outer:
                 for (int y = origin.getY() - SCAN_RANGE; y < origin.getY() + SCAN_RANGE; ++y) {
                     BlockPos attemptPos = new BlockPos(x, y, z);
                     double distance = BlockPosVer.getSquaredDistance(attemptPos,mod.getPlayer().getPos());

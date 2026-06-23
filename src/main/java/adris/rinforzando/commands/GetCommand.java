@@ -8,7 +8,6 @@ import adris.rinforzando.commandsystem.args.ListArg;
 import adris.rinforzando.commandsystem.exception.CommandException;
 import adris.rinforzando.tasksystem.Task;
 import adris.rinforzando.util.ItemTarget;
-import net.minecraft.item.ItemStack;
 
 import java.util.List;
 

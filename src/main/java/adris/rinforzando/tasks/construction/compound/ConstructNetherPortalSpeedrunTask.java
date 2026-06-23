@@ -476,7 +476,6 @@ public class ConstructNetherPortalSpeedrunTask extends adris.rinforzando.tasksys
 
         // If we're supposed to have structures here, ignore.
         Vec3i relativeToOrigin = toCheck.subtract(portalOrigin);//new Vec3i(dx - PORTAL_ORIGIN_RELATIVE_TO_REGION.getX(), dy  - PORTAL_ORIGIN_RELATIVE_TO_REGION.getY(), dz - PORTAL_ORIGIN_RELATIVE_TO_REGION.getZ());
-        boolean foundFrame = false;
         for (Vec3i framePos : PORTAL_CONSTRUCTION_FRAME) {
             if (framePos.equals(relativeToOrigin)) {
                 return false;

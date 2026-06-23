@@ -18,9 +18,8 @@ public abstract class Command {
     private final Arg<?>[] args;
     private final List<String> names;
     private final String description;
-    private Rinforzando mod;
     private Runnable onFinish = null;
-    private int minArgCount = 0;
+    private Rinforzando mod;
 
     public Command(String name, String description, Arg<?>... args) {
         this(List.of(name), description, args);

@@ -1,6 +1,5 @@
 package adris.rinforzando.multiversion;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.world.World;

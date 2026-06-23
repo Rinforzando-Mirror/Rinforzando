@@ -5,7 +5,6 @@ import adris.rinforzando.Debug;
 import adris.rinforzando.eventbus.EventBus;
 import adris.rinforzando.eventbus.events.ChunkLoadEvent;
 import adris.rinforzando.eventbus.events.ChunkUnloadEvent;
-import adris.rinforzando.util.helpers.WorldHelper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.chunk.EmptyChunk;

@@ -5,8 +5,6 @@ import adris.rinforzando.Debug;
 import adris.rinforzando.util.time.TimerGame;
 
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class WhisperChecker {
 

@@ -183,16 +183,6 @@ public class FoodChain extends SingleTaskChain {
         return Float.NEGATIVE_INFINITY;
     }
 
-    private boolean areEnemiesNearby(Rinforzando mod) {
-        for (Entity entity : mod.getEntityTracker().getCloseEntities()) {
-            if (entity instanceof HostileEntity hostile && hostile.distanceTo(mod.getPlayer()) < (isTryingToEat?14:7)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     @Override
     public boolean isActive() {
         // We're always checking for food.
