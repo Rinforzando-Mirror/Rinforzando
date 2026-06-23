@@ -1,17 +1,20 @@
 {
   "schemaVersion": 1,
   "id": "rinforzando",
-  "version": "1.21-beta1",
+  "version": "1.21-pre",
   "name": "Rinforzando",
-  "description": "Plays Block Game",
+  "description": "fights in block game",
   "authors": [
-    "Marvion Kirito"
+    "Vextoly",
+    "ItzAlphabet",
+    "AltoClef Contributors",
+    "Baritone Contributors"
   ],
   "contact": {
-    "homepage": "https://fabricc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://rinforzando.codeberg.page/",
+    "sources": "https://codeberg.org/Rinforzando/Rinforzando"
   },
-  "license": "CC0-1.0",
+  "license": "LGPL-3.0",
   "icon": "assets/rinforzando/icon.png",
   "environment": "*",
   "entrypoints": {
