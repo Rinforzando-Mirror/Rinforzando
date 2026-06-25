@@ -8,7 +8,7 @@
 > 
 > Rinforzando is currently in a very early stage of active development. Because it is a **work in very progress**, there are **no official builds or wiki pages available yet**. Stay tuned for updates!
 
-**Rinforzando** is a utility-focused modification designed to optimize bot pathfinding and combat mechanics for modern Minecraft versions. This project is built directly on top of [MarvionKirito's AltoClef](https://github.com/MarvionKirito/altoclef) and parts of [MiranCZ's fork](/https://github.com/MiranCZ/altoclef), inheriting its stability improvements.
+**Rinforzando** is a utility-focused modification designed to optimize bot pathfinding and combat mechanics for modern Minecraft versions. This project is built directly on top of [MarvionKirito's AltoClef](https://github.com/MarvionKirito/altoclef) and parts of [MiranCZ's fork](https://github.com/MiranCZ/altoclef), inheriting its stability improvements.
 
 ## Features
 
